@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<title>Quiz Game</title>
+	</head>
+	<body>
+		<div class="start-container">
+			<p>
+				The game consists of 10 questions and you are given 7 minutes to solve them․
+			</p>
+			<p>Wish you good luck</p>
+			<button id="start">Start quiz</button>
+		</div>
+		<div class="quiz-container">
+			<span id="time"></span>
+			<h4 id="question-number"></h4>
+			<div class="quiz-inner">
+				<h2 id="question-text">Question text</h2>
+				<ul>
+					<li>
+						<input id="a" name="answer" type="radio"  class="answer">
+						<label for="a" id="a-text">a</label>
+					</li>
+					<li>
+						<input id="b" name="answer" type="radio"   class="answer">
+						<label for="b"   id="b-text">b</label>
+					</li>
+					<li>
+						<input id="c" name="answer" type="radio"   class="answer">
+						<label for="c" id="c-text">c</label>
+					</li>
+					<li>
+						<input id="d" name="answer" type="radio"  class="answer">
+						<label for="d" id="d-text">d</label>
+					</li>
+				</ul>
+			</div>
+			<div class="submit-container">
+				<button class="submit-btn">Submit</button>
+			</div>
+		</div>
+		<div class="modal-container" id="modal-container">
+			<div class="modal">
+				<p>The allotted time has expired. Please try again</p>
+				<div class="submit-container">
+					<button id="reload">Reload</button>
+				</div>
+			</div>
+		</div>
+		<script src="questions.js"></script>
+		<script src="quiz.js"></script>
+	</body>
+</html>

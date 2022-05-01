@@ -1,0 +1,259 @@
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   background-color: #457b9d;
+   font-family: 'Open Sans', sans-serif;
+}
+
+.start-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.start-container p {
+   font-size: 22px;
+   color: #e5e5e5;
+   font-weight: 500;
+   width: 70%;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.quiz-container {
+   width: 700px;
+   background-color: #e5e5e5;
+   border-radius: 10px;
+   overflow: hidden;
+   position: relative;
+   color: #000;
+   display: none;
+}
+
+.quiz-container.show {
+   display: block;
+}
+
+.hide {
+   display: none;
+}
+
+#reload {
+   margin-top: 40px;
+}
+
+#start,
+#reload {
+   width: 50%;
+   height: 40px;
+   font-size: 23px;
+   cursor: pointer;
+   border: none;
+   outline: none;
+   background: black;
+   color: white;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: 500;
+   position: relative;
+   transition: all 0.5s;
+   z-index: 1;
+   margin-bottom: 5px;
+   letter-spacing: 1.5px;
+}
+
+#start::before,
+#reload::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 10px;
+   height: 100%;
+   background-color: #adb5bd;
+   z-index: -1;
+   transition: all 0.4s;
+}
+
+#start:hover::before,
+#reload:hover::before {
+   width: 100%;
+}
+
+#start:hover,
+#reload:hover {
+   color: #000;
+   font-weight: 500;
+}
+
+#start:active:before,
+#reload:active:before {
+   background: #000;
+}
+
+#time {
+   position: absolute;
+   top: 10px;
+   right: 15px;
+   font-size: 20px;
+   font-weight: 500;
+}
+
+#question-number {
+   position: absolute;
+   top: 10px;
+   left: 15px;
+   font-size: 20px;
+   font-weight: 500;
+}
+
+.quiz-inner {
+   padding: 4rem;
+}
+
+#question-text {
+   padding: 1rem;
+   text-align: center;
+}
+
+ul li {
+   list-style: none;
+   font-size: 1.2rem;
+   margin: 1rem 0;
+}
+
+.submit-container {
+   display: flex;
+   justify-content: center;
+}
+
+.submit-btn {
+   width: 50%;
+   height: 40px;
+   font-size: 23px;
+   cursor: pointer;
+   border: none;
+   outline: none;
+   background: black;
+   color: white;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: 500;
+   position: relative;
+   transition: all 0.5s;
+   z-index: 1;
+   margin-bottom: 5px;
+   letter-spacing: 1.5px;
+}
+
+.submit-btn::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 10px;
+   height: 100%;
+   background-color: #adb5bd;
+   z-index: -1;
+   transition: all 0.4s;
+}
+
+.submit-btn:hover::before {
+   width: 100%;
+}
+
+.submit-btn:hover {
+   color: #000;
+   font-weight: 500;
+}
+
+.submit-btn:active:before {
+   background: #000;
+}
+
+.disable {
+   pointer-events: none;
+   opacity: 0.5;
+}
+
+.result {
+   padding: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.modal-container {
+   background-color: rgba(0, 0, 0, .6);
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   pointer-events: none;
+   transition: opacity 1.1s ease-in-out;
+}
+
+.modal-container.show {
+   opacity: 1;
+   pointer-events: auto;
+}
+
+.modal {
+   background-color: #fff;
+   border-radius: 15px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+   max-width: 500px;
+   padding: 20px 40px;
+   margin: 20px;
+}
+
+.modal p {
+   font-size: 21px;
+}
+
+@media(max-width: 720px) {
+   .quiz-container {
+      max-width: 600px;
+      margin: 20px;
+   }
+}
+
+@media(max-width: 540px) {
+   .quiz-inner {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 2.8rem;
+   }
+
+   #question-number, #time{
+   	font-size: 19px
+   }
+
+   #question-text {
+      font-size: 21px;
+      padding: 0.6rem;
+   }
+
+   .start-container p{
+   	line-height: 33px
+   }
+}
+
+@media(max-width: 370px) {
+  #question-text {
+      line-height: 30px;
+    }
+}
